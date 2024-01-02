@@ -25,7 +25,7 @@ ASpell* SpellBook::createSpell(std::string const & spell_to_create)
 	return result;
 }
 
-std::map<const std::string, const ASpell*> SpellBook::getSpells()
+std::map<const std::string, const ASpell*> SpellBook::getSpells() const
 {
 	return this->_spells;
 };

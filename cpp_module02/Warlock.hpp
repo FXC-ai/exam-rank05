@@ -14,8 +14,8 @@ class Warlock
 		Warlock();
 		Warlock & operator=(const Warlock &rhs);
 		Warlock(const Warlock &src);
-		std::map<const std::string, const ASpell*> _spells;
-		// SpellBook _spellBook;
+		// std::map<const std::string, const ASpell*> _spells;
+		SpellBook _spellBook;
 
 	public :
 		Warlock(const std::string &name, const std::string &title);
