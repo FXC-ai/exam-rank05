@@ -15,6 +15,7 @@
 #include "Fireball.hpp"
 #include "BrickWall.hpp"
 #include "SpellBook.hpp"
+#include "TargetGenerator.hpp"
 
 int main ()
 {
@@ -75,6 +76,8 @@ int main ()
 
 		delete brick1;
 	}
+
+
 	{
 
 		std::cout << BLUE << "SpellBook check" << RESET << std::endl;
@@ -118,6 +121,26 @@ int main ()
 		delete spellBook0;
 	}
 	{
+		std::cout << BLUE << "TargetGenerator check" << RESET << std::endl;
+
+		TargetGenerator target_generator0;
+		Fwoosh fwoosh0;
+		BrickWall brickwall0;
+		Warlock boss("Jean", "The Try Harder");
+
+
+		target_generator0.learnTargetType(&brickwall0);
+		boss.learnSpell(&fwoosh0);
+
+		boss.introduce();
+
+		boss.launchSpell("fwoosh", *target_generator0.createTarget("BrickWall"));
+
+
+	}
+
+
+	{
 		std::cout << BLUE << "Warlock check" << RESET << std::endl;
 
 		Warlock richard("Richard", "the Titled");
@@ -135,6 +158,38 @@ int main ()
 		richard.launchSpell("Fwoosh", bob);
 
 		delete fwoosh;
+
+	}
+
+	{
+	{
+		Warlock richard("Richard", "foo");
+		richard.setTitle("Hello, I'm Richard the Warlock!");
+		BrickWall model1;
+
+		Polymorph* polymorph = new Polymorph();
+		TargetGenerator tarGen;
+
+		tarGen.learnTargetType(&model1);
+		richard.learnSpell(polymorph);
+
+		Fireball* fireball = new Fireball();
+
+		richard.learnSpell(fireball);
+
+		ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
+
+		richard.introduce();
+		richard.launchSpell("Polymorph", *wall);
+		richard.launchSpell("Fireball", *wall);
+
+		delete polymorph;
+		delete fireball;
+		delete wall;
+	}
+
+
+
 
 	}
 	std::cout << std::endl;

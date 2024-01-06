@@ -1,41 +1,40 @@
-#include "SpellBook.hpp"
+#include "TargetGenerator.hpp"
 
-SpellBook::SpellBook(){}
+TargetGenerator::TargetGenerator(){}
 
-SpellBook::~SpellBook()
+TargetGenerator::~TargetGenerator()
 {
-	for (std::map<const std::string, const ASpell*>::iterator it = this->_spells.begin(); it != this->_spells.end(); ++it)
+	for (std::map<const std::string, const ATarget*>::iterator it = this->_targets.begin(); it != this->_targets.end(); ++it)
 	{
 		delete it->second;
 	}
 }
 
-void SpellBook::learnSpell(ASpell* spell_to_learn)
+void TargetGenerator::learnTargetType(ATarget* target_to_learn)
 {
-	this->_spells[spell_to_learn->getName()] = spell_to_learn->clone();
+	this->_targets[target_to_learn->getType()] = target_to_learn->clone();
 }
 
-ASpell* SpellBook::createSpell(std::string const & spell_to_create)
+ATarget* TargetGenerator::createTarget(std::string const & target_to_create)
 {
-	ASpell *result = NULL;
-	if (this->_spells.count(spell_to_create) == 1)
+	ATarget *result = NULL;
+	if (this->_targets.count(target_to_create) == 1)
 	{
-		result = this->_spells[spell_to_create]->clone();
+		result = this->_targets[target_to_create]->clone();
 	}
 	return result;
 }
 
-std::map<const std::string, const ASpell*> SpellBook::getSpells() const
+std::map<const std::string, const ATarget*> TargetGenerator::getTargets() const
 {
-	return this->_spells;
+	return this->_targets;
 };
 
-void SpellBook::forgetSpell(std::string const & spell_to_forget)
+void TargetGenerator::forgetTargetType(std::string const & target_to_forget)
 {
-	if (this->_spells.count(spell_to_forget))
+	if (this->_targets.count(target_to_forget))
 	{
-		delete this->_spells[spell_to_forget];
-		this->_spells.erase(spell_to_forget);
+		delete this->_targets[target_to_forget];
+		this->_targets.erase(target_to_forget);
 	}
-
 };
