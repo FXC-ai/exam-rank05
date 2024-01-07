@@ -1,11 +1,13 @@
 #include "Dummy.hpp"
 
-Dummy::Dummy ()
+Dummy::Dummy()
 {
 	this->_type = "Target Practice Dummy";
 }
 
-Dummy *Dummy::clone() const
+Dummy::~Dummy(){}
+
+Dummy* Dummy::clone() const
 {
 	return new Dummy();
 }

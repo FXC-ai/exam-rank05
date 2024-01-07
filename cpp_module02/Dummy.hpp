@@ -5,9 +5,12 @@
 
 class Dummy : public ATarget
 {
+
 	public :
-		Dummy ();
-		virtual Dummy* clone() const;	
+		Dummy();
+		virtual ~Dummy();
+		virtual Dummy* clone() const;
+
 };
 
 #endif

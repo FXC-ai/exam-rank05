@@ -1,12 +1,16 @@
 #include "Fwoosh.hpp"
 
-Fwoosh::Fwoosh ()
+Fwoosh::Fwoosh()
 {
 	this->_name = "Fwoosh";
 	this->_effects = "fwooshed";
 }
 
-Fwoosh *Fwoosh::clone() const
+Fwoosh::~Fwoosh()
+{
+}
+
+Fwoosh* Fwoosh::clone() const
 {
 	return new Fwoosh();
 }
