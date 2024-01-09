@@ -2,12 +2,12 @@
 
 Dummy::Dummy()
 {
-	this->_type = "Target Practice Dummy";
+	this->_type = "Inconspicuous Red-brick Wall";
 }
 
-Dummy::~Dummy(){}
+Dummy::~Dummy(){};
 
-Dummy* Dummy::clone() const
+Dummy * Dummy::clone() const
 {
 	return new Dummy();
 }

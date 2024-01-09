@@ -1,5 +1,5 @@
-#ifndef POLY_HPP
-#define POLY_HPP
+#ifndef POL_HPP
+#define POL_HPP
 
 #include "ASpell.hpp"
 
@@ -7,8 +7,8 @@ class Polymorph : public ASpell
 {
 	public :
 		Polymorph();
-		virtual ~Polymorph();
-		virtual Polymorph* clone() const;
+		~Polymorph();
+		virtual Polymorph * clone() const;
 };
 
 #endif

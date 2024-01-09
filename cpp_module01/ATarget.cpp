@@ -4,9 +4,10 @@ ATarget::ATarget(){}
 
 ATarget::ATarget(const std::string & type) : _type(type)
 {
+
 }
 
-ATarget & ATarget::operator=(const ATarget & rhs)
+ATarget & ATarget::operator=(const ATarget &rhs)
 {
 	if (this != &rhs)
 	{
@@ -15,14 +16,14 @@ ATarget & ATarget::operator=(const ATarget & rhs)
 	return *this;
 }
 
-ATarget::ATarget(const ATarget & src)
+ATarget::ATarget(const ATarget &src)
 {
 	*this = src;
 }
 
-ATarget::~ATarget(){}
+ATarget::~ATarget(){};
 
-const std::string & ATarget::getType() const
+const std::string ATarget::getType() const
 {
 	return this->_type;
 }

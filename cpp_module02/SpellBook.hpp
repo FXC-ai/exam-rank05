@@ -1,28 +1,28 @@
-#ifndef SB_HPP
-#define SB_HPP
+#ifndef SPE_HPP
+#define SPE_HPP
 
 #include <map>
 #include "ASpell.hpp"
 
 class SpellBook
 {
-
 	private :
-		std::map<std::string, ASpell*> _spellBook;
-
 		SpellBook & operator=(const SpellBook & rhs);
-		SpellBook(const SpellBook & src);
+		SpellBook(const SpellBook & rhs);
 
+		std::map<std::string , ASpell *> _spellBook;
 
 	public :
 		SpellBook();
 		~SpellBook();
-
-		std::map<std::string, ASpell*> getSpellBook() const;
-
-		void learnSpell(ASpell* spell);
-		void forgetSpell(std::string const & name);
+		void learnSpell(ASpell *spell);
+		void forgetSpell(std::string const &name);
 		ASpell* createSpell(std::string const & name);
+
+		std::map<std::string , ASpell *> getSpellBook() const;
+
+
 };
+
 
 #endif

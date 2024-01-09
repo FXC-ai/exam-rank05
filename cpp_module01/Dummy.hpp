@@ -1,16 +1,14 @@
-#ifndef DUMMY_HPP
-#define DUMMY_HPP
+#ifndef DUM_HPP
+#define DUM_HPP
 
 #include "ATarget.hpp"
 
 class Dummy : public ATarget
 {
-
 	public :
 		Dummy();
-		virtual ~Dummy();
-		virtual Dummy* clone() const;
-
+		~Dummy();
+		virtual Dummy * clone() const;
 };
 
 #endif

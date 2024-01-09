@@ -6,11 +6,9 @@ Fwoosh::Fwoosh()
 	this->_effects = "fwooshed";
 }
 
-Fwoosh::~Fwoosh()
-{
-}
+Fwoosh::~Fwoosh(){};
 
-Fwoosh* Fwoosh::clone() const
+Fwoosh * Fwoosh::clone() const
 {
 	return new Fwoosh();
 }

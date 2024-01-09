@@ -1,16 +1,14 @@
-#ifndef BW_HPP
-#define BW_HPP
+#ifndef BRI_HPP
+#define BRI_HPP
 
 #include "ATarget.hpp"
 
 class BrickWall : public ATarget
 {
-
 	public :
 		BrickWall();
-		virtual ~BrickWall();
-		virtual BrickWall* clone() const;
-
+		~BrickWall();
+		virtual BrickWall * clone() const;
 };
 
 #endif

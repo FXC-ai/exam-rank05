@@ -1,23 +1,21 @@
-#ifndef WARLOCK
-#define WARLOCK
+#ifndef WAR_HPP
+#define WAR_HPP
+
 
 #include <iostream>
 #include <map>
-
 #include "ASpell.hpp"
-#include "ATarget.hpp"
-
 
 class Warlock
 {
+
 	private :
-		const std::string _name;
+		std::string _name;
 		std::string _title;
 		Warlock();
 		Warlock & operator=(const Warlock & rhs);
 		Warlock(const Warlock & src);
-
-		std::map<const std::string, const ASpell*> _spellBook;
+		std::map<std::string, ASpell*> _spellBook;
 
 	public :
 		Warlock(const std::string & name, const std::string & title);
@@ -26,13 +24,14 @@ class Warlock
 		const std::string & getName() const;
 		const std::string & getTitle() const;
 
-		void setTitle (const std::string & title);
+		void setTitle(const std::string & title);
 
 		void introduce() const;
 
 		void learnSpell(ASpell *spell);
-		void forgetSpell(std::string name);
-		void launchSpell(const std::string name, const ATarget & target);
+		void forgetSpell(const std::string name);
+		void launchSpell(std::string name, const ATarget & target);
+		// void launchSpell(const std::string name, ATarget & target);
 
 };
 
